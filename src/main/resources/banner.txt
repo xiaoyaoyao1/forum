@@ -1,0 +1,9 @@
+${AnsiColor.BLUE}
+  _____
+_/ ____\___________ __ __  _____
+\   __\/  _ \_  __ \  |  \/     \
+ |  | (  <_> )  | \/  |  /  Y Y  \
+ |__|  \____/|__|  |____/|__|_|  /
+                               \/
+${AnsiColor.BRIGHT_YELLOW}
+ ::: Spring-Boot ${spring-boot.version}     ::: Forum (version:${application.formatted-version})
