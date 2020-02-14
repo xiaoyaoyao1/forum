@@ -15,8 +15,8 @@
     <description>Forum project for Spring Boot</description>
 
     <properties>
-        <java.version>1.8</java.version>
-    </properties>
+    <java.version>1.8</java.version>
+</properties>
 
     <dependencies>
         <dependency>
@@ -56,6 +56,19 @@
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
