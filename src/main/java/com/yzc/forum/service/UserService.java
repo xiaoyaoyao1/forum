@@ -2,8 +2,11 @@ package com.yzc.forum.service;
 
 import com.yzc.forum.mapper.UserMapper;
 import com.yzc.forum.model.User;
+import com.yzc.forum.model.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService {
@@ -12,19 +15,28 @@ public class UserService {
 
     public void createOrUpdate(User user) {
 
-        User dbuser = userMapper.findByAccountId(user.getAccountId());
-        if(dbuser==null){
+        UserExample userExample = new UserExample();
+        userExample.createCriteria()
+                .andAccountIdEqualTo(user.getAccountId());
+        List<User> users = userMapper.selectByExample(userExample);
+        if(users.size()==0){
             //插入
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
             userMapper.insert(user);
         }else {
             //更新
-            dbuser.setGmtCreate(System.currentTimeMillis());
-            dbuser.setAvatarUrl(user.getAvatarUrl());
-            dbuser.setName(user.getName());
-            dbuser.setToken(user.getToken());
-            userMapper.update(dbuser);
+            User dbUser = users.get(0);
+            User updateUser = new User();
+            updateUser.setGmtCreate(System.currentTimeMillis());
+            updateUser.setAvatarUrl(user.getAvatarUrl());
+            updateUser.setName(user.getName());
+            updateUser.setToken(user.getToken());
+            UserExample example = new UserExample();
+            example.createCriteria()
+                    .andIdEqualTo(dbUser.getId());
+            userMapper.updateByExampleSelective(updateUser, example);
+
         }
     }
 }
