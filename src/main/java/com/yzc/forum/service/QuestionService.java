@@ -4,6 +4,7 @@ import com.yzc.forum.dto.PaginationDTO;
 import com.yzc.forum.dto.QuestionDTO;
 import com.yzc.forum.exception.CustomizeErrorCode;
 import com.yzc.forum.exception.CustomizeException;
+import com.yzc.forum.mapper.QuestionExtMapper;
 import com.yzc.forum.mapper.QuestionMapper;
 import com.yzc.forum.mapper.UserMapper;
 import com.yzc.forum.model.Question;
@@ -22,6 +23,9 @@ public class QuestionService {
 
     @Autowired
     private QuestionMapper questionMapper;
+
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
 
     @Autowired
     private UserMapper userMapper;
@@ -144,5 +148,12 @@ public class QuestionService {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
+    }
+
+    public void incView(Integer id) {
+        Question question = new Question();
+        question.setId(id);
+        question.setViewCount(1);
+        questionExtMapper.incView(question);
     }
 }
