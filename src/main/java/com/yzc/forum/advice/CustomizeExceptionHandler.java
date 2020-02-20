@@ -29,7 +29,6 @@ public class CustomizeExceptionHandler {
             } else {
                 resultDTO = ResultDTO.errorOf(CustomizeErrorCode.SYS_ERROR);
             }
-
             try {
                 response.setContentType("application/json");
                 response.setStatus(200);
