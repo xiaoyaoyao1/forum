@@ -9,7 +9,7 @@
 ### 工具
 git、markdown、谷歌翻译插件、octotree插件
 ### 知识点
-localStorage、mybatisGenerator、前后端分离方式
+localStorage、mybatisGenerator、前后端分离方式、java8新特性lamada、Apache Commons Lang验证字符串
 ```bash
 逆向工程生成代码：mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 
