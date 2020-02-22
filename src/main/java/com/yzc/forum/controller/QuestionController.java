@@ -1,8 +1,8 @@
 package com.yzc.forum.controller;
 
-import com.yzc.forum.dto.CommentCreateDTO;
 import com.yzc.forum.dto.CommentDTO;
 import com.yzc.forum.dto.QuestionDTO;
+import com.yzc.forum.enums.CommentTypeEnum;
 import com.yzc.forum.service.CommentService;
 import com.yzc.forum.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class QuestionController {
     @GetMapping("/question/{id}")
     public String question(@PathVariable(name = "id") Long id, Model model) {
         QuestionDTO questionDTO = questionService.getById(id);
-        List<CommentDTO> comments = commentService.listByQuestionId(id);
+        List<CommentDTO> comments = commentService.listByTargetId(id, CommentTypeEnum.QUESTION);
         //增加阅读数
         questionService.incView(id);
         model.addAttribute("question", questionDTO);
