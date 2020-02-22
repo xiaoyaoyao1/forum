@@ -7,7 +7,7 @@
 
 [bootstrap组件](https://v3.bootcss.com/components/)
 ### 工具
-git、markdown、谷歌翻译插件、octotree插件
+git、markdown、谷歌翻译插件、octotree插件、momentJs
 ### 知识点
 localStorage、mybatisGenerator、前后端分离方式、java8新特性lamada、Apache Commons Lang验证字符串
 ```bash
