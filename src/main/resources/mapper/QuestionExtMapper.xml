@@ -28,4 +28,8 @@
     where id = #{id}
     </update>
 
+    <select id="selectRelated" parameterType="com.yzc.forum.model.Question" resultMap="BaseResultMap">
+        select * from QUESTION where id != #{id} and tag regexp #{tag}
+    </select>
+
 </mapper>

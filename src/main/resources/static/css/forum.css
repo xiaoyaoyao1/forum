@@ -1,62 +1,93 @@
-.main{
+.main {
     background-color: white;
     margin: 30px;
 }
 
-body{
+body {
     background-color: #efefef;
 }
 
-.btn-publish{
+.btn-publish {
     float: right;
     margin-bottom: 15px;
 }
 
-.media-object{
+.media-object {
     width: 40px;
     height: 40px;
 }
 
-.media-body{
+.media-body {
     padding-top: 10px;
 }
 
-.text-desc{
+.text-desc {
     font-size: 12px;
     font-weight: normal;
     color: #999;
 }
 
-.profile .section{
+.profile .section {
     margin-top: 30px;
 }
 
-.question-title{
+.question-title {
     margin-top: 25px;
 }
 
-.forum-menu{
+.question-tag {
+    margin-right: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.question-tag:hover {
+    color: #eee;
+}
+
+.question-related {
+    line-height: 30px;
+    font-size: 15px;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.follow img{
+    display: flex;
+    float: left;
+    width: 50%;
+    height: 50%;
+}
+
+.question-related a:hover {
+    color: #499ef3;
+    cursor: pointer;
+    text-align: -webkit-match-parent;
+}
+
+.forum-menu {
     display: block;
     color: #999;
     font-size: 13px;
     margin-bottom: 15px;
 }
 
-.jumbotron{
-    margin:50px;
+.jumbotron {
+    margin: 50px;
 }
 
-.comment{
+.comment {
     margin: 10px 0;
 }
 
-.comments{
+.comments {
     padding-bottom: 5px;
     margin-bottom: 15px;
     border-bottom: 1px solid #eee;
 }
 
-.sub-comments{
+.sub-comments {
     border-radius: 15px;
     margin-top: 10px;
     border: 1px solid #eee;
@@ -64,39 +95,39 @@ body{
     margin-bottom: 15px;
 }
 
-.sub-comments .btn{
+.sub-comments .btn {
     margin: 10px 0;
 }
 
-.comment-sp{
+.comment-sp {
     margin-top: 0;
 }
 
-.menu{
+.menu {
     color: #999;
     margin-top: 5px;
 }
 
-.menu .icon{
+.menu .icon {
     margin-right: 6px;
     font-size: 15px;
     cursor: pointer;
 }
 
-.menu .comment-icon{
+.menu .comment-icon {
     font-size: 15px;
     cursor: pointer;
 }
 
-.menu .comment-icon:hover{
+.menu .comment-icon:hover {
     color: #499ef3;
 }
 
-.menu .active{
+.menu .active {
     color: #499ef3;
 }
 
-.menu .icon:hover{
+.menu .icon:hover {
     color: #499ef3;
 }
 
