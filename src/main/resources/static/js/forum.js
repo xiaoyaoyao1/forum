@@ -114,3 +114,18 @@ function collapseComments(e) {
         }
     }
 }
+function showSelectTag() {
+    $(".publish-tag-tab").show();
+}
+//失去焦点
+
+function selectTag(value) {
+    var previous = $("#tag").val();
+    if (previous.indexOf(value)==-1){
+        if(previous){
+            $("#tag").val(previous+','+value);
+        }else {
+            $("#tag").val(value);
+        }
+    }
+}
