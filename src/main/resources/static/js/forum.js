@@ -117,9 +117,9 @@ function collapseComments(e) {
 function showSelectTag() {
     $(".publish-tag-tab").show();
 }
-//失去焦点
 
-function selectTag(value) {
+function selectTag(e) {
+    var value = e.getAttribute("data-tag");
     var previous = $("#tag").val();
     if (previous.indexOf(value)==-1){
         if(previous){
