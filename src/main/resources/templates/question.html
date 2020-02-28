@@ -3,16 +3,25 @@
 <head>
     <title th:text="${question.title}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <script src="/js/jquery-3.4.1.min.js"></script>
     <link rel="shortcut icon" href="http://localhost:8887/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/forum.css">
+    <link rel="stylesheet" href="/css/editormd.preview.min.css">
+    <script src="/js/jquery-3.4.1.min.js" type="application/javascript"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
     <script src="/js/moment.min.js" type="application/javascript"></script>
     <script src="/js/forum.js" type="application/javascript"></script>
+    <script src="/js/editormd.min.js"></script>
+    <script src="/js/lib/marked.min.js"></script>
+    <script src="/js/lib/prettify.min.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+    $(function () {
+        editormd.markdownToHTML("question-view", {});
+    });
+</script>
 <div th:insert="~{navigation::nav }"></div>
 <div class="container-fluid main profile">
     <div class="row">
@@ -29,8 +38,9 @@
             </span>
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!--内容-->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:text="${question.description}"
-                     style="font-size: 17px"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="question-view" style="font-size: 17px">
+                    <textarea style="display:none;" th:text="${question.description}"></textarea>
+                </div>
                 <!--标签-->
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -145,8 +155,8 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 follow">
                 <h6>Author:Pay attention to my official account and GitHub.</h6>
                 <div class="img-thumbnail follow-img">
-                    <img src="/image/wechat.jpg" title="my official account">
-                    <img src="/image/github.png" title="my GitHub">
+                    <img src="/images/wechat.jpg" title="my official account">
+                    <img src="/images/github.png" title="my GitHub">
                 </div>
             </div>
             <!--相关问题-->
