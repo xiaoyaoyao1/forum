@@ -2,6 +2,7 @@ package com.yzc.forum.service;
 
 import com.yzc.forum.dto.PaginationDTO;
 import com.yzc.forum.dto.QuestionDTO;
+import com.yzc.forum.dto.QuestionQueryDTO;
 import com.yzc.forum.exception.CustomizeErrorCode;
 import com.yzc.forum.exception.CustomizeException;
 import com.yzc.forum.mapper.QuestionExtMapper;
@@ -33,10 +34,20 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
-    public PaginationDTO list(Integer page, Integer size) {
+    public PaginationDTO list(String search, Integer page, Integer size) {
+
+        if(StringUtils.isNotBlank(search)){
+            String[] tags = StringUtils.split(search, " ");
+            search = Arrays.stream(tags).collect(Collectors.joining("|"));
+        }
+
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalPage;
-        Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
+
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        questionQueryDTO.setSearch(search);
+
+        Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
 
         if(totalCount % size ==0){
             totalPage = totalCount / size;
@@ -51,13 +62,14 @@ public class QuestionService {
             page=totalPage;
         }
         paginationDTO.setPagination(totalPage,page);
-        //size*(page-1)
         Integer offset = size * (page-1);
         /*20200216 修改generatorConfig.xml 增加<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin> 再终端重新输入mvn mapper自动添加分页方法
         selectByExampleWithRowbounds*/
         QuestionExample questionExample = new QuestionExample();
         questionExample.setOrderByClause("gmt_create desc");
-        List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample, new RowBounds(offset, size));
+        questionQueryDTO.setSize(size);
+        questionQueryDTO.setPage(offset);
+        List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
 

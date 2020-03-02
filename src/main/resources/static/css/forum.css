@@ -151,3 +151,11 @@ body {
     color: #499ef3;
 }
 
+.footer{
+    padding: 8px 0 10px;
+    color: #666;
+    font-size: 13px;
+    text-align: center;
+    font-family: candara,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif, -apple-system;
+}
+

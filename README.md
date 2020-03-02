@@ -6,6 +6,8 @@
 [spring web](https://spring.io/guides/gs/serving-web-content/)
 
 [bootstrap组件](https://v3.bootcss.com/components/)
+
+[markdown插件](http://editor.md.ipandao.com/)
 ### 工具
 git、markdown、谷歌翻译插件、octotree插件、momentJs
 ### 知识点
