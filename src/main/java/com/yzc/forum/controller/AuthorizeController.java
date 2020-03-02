@@ -6,6 +6,7 @@ import com.yzc.forum.mapper.UserMapper;
 import com.yzc.forum.model.User;
 import com.yzc.forum.provider.GithubProvider;
 import com.yzc.forum.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 @Controller
+@Slf4j
 public class AuthorizeController {
 
     @Autowired
@@ -58,7 +60,8 @@ public class AuthorizeController {
 
             return "redirect:/";
         }else {
-
+            //打日志
+            log.error("callback get github error,{}",githubUser);
             //登录失败，重新登录
             return "redirect:/";
         }
