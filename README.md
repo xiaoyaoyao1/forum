@@ -1,4 +1,26 @@
 ## YY社区论坛项目
+### 依赖
+- Git
+- Jdk
+- Maven
+- Mysql
+
+[欢迎进入YY社区](http://47.115.174.44/)
+
+### 步骤
+- yum update
+- yum install git
+- yum install maven
+- yum mkdir App
+- cd App
+- git clone https://github.com/codedrinker/community.git
+- cd forum
+- vim src/main/resources/application-production.properties
+- mvn clean compile package
+- java -jar -Dspring.profiles.active=production target/forum-0.0.1-SNAPSHOT.jar
+- vim src/main/resources/templates/navigation.html
+- ps -ef | grep java
+- kill -9 号
 #### 运行须知
 修改applcation.properties信息，详情根据下方Github OAuth和OSS对象存储进行注册查看。
 ### 资料
