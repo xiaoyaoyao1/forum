@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 @Controller
-@Slf4j
 public class AuthorizeController {
 
     @Autowired
@@ -61,7 +60,7 @@ public class AuthorizeController {
             return "redirect:/";
         }else {
             //打日志
-            log.error("callback get github error,{}",githubUser);
+//            log.error("callback get github error,{}",githubUser);
             //登录失败，重新登录
             return "redirect:/";
         }
