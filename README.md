@@ -13,7 +13,7 @@
 - yum install maven
 - yum mkdir App
 - cd App
-- git clone https://github.com/codedrinker/community.git
+- git clone https://github.com/xiaoyaoyao1/forum.git
 - cd forum
 - vim src/main/resources/application-production.properties
 - mvn clean compile package
