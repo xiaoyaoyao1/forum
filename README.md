@@ -18,6 +18,7 @@
 - vim src/main/resources/application-production.properties
 - mvn clean compile package
 - nohup java -jar -Dspring.profiles.active=production target/forum-0.0.1-SNAPSHOT.jar &> nohup.txt
+- nohup java -jar target/forum-0.0.1-SNAPSHOT.jar &> nohup.txt
 - vim src/main/resources/templates/navigation.html
 - ps -ef | grep java
 - kill -9 PID
