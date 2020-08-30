@@ -5,9 +5,10 @@
 - Maven
 - Mysql
 
-[欢迎进入YY社区](http://47.115.174.44/)
+[欢迎进入YY社区](http://www.yzcforum.cn/)
 
-### 步骤
+### 部署步骤
+```bash
 - yum update
 - yum install git
 - yum install maven
@@ -22,11 +23,12 @@
 - vim src/main/resources/templates/navigation.html
 - ps -ef | grep java
 - kill -9 PID
+```
 #### 运行须知
 修改applcation.properties信息，详情根据下方Github OAuth和OSS对象存储进行注册查看。
-### 资料
+### 资料查阅
 [Github OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)<br/>
- [Spring 文档](https://spring.io/guides)<br/>
+[Spring 文档](https://spring.io/guides)<br/>
 [Spring web](https://spring.io/guides/gs/serving-web-content/)<br/>
 [bootstrap组件](https://v3.bootcss.com/components/)<br/>
 [Markdown插件](http://editor.md.ipandao.com/)<br/>
@@ -39,7 +41,7 @@
 [postman](https://chrome.google.com/webstore/detail/coohjcphdfgbiolnekdpbcijmhambjff)<br/>
 [momentJs插件](http://momentjs.cn/)<br/>
 ### 知识点
-localStorage<br/>mybatisGenerator<br/>前后端分离方式<br/>java8新特性lamada<br/>Apache Commons Lang验证字符串<br/>
+localStorage<br/>mybatisGenerator<br/>前后端分离方式<br/>java8新特性lamada箭头函数<br/>Apache Commons Lang验证字符串<br/>
 ```bash
 逆向工程生成代码：mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ```
